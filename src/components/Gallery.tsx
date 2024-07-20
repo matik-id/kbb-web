@@ -3,7 +3,7 @@ import Marquee from 'react-fast-marquee'
 
 const Gallery = () => {
   return (
-    <div className='px-36 py-5 h-[300px] my-24 '>
+    <div className='px-36  h-[300px]  '>
         <h1 className="font-bold text-[#1E8B43] border-l-8 border-[#1E8B43] pl-2 mb-4">
                 Galeri Foto dan Video 
         </h1>

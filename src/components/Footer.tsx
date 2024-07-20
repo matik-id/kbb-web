@@ -29,7 +29,7 @@ const Footer = () => {
         </div>
       </div>
       <hr />
-      <div className="text-right mt-1">
+      <div className="text-center mt-1">
         <p> Copyright 2024 | KBB Banjar</p>
       </div>
     </div>
