@@ -7,7 +7,7 @@ export default function ImageCarousel() {
   ];
 
   return (
-    <div className="px-36 ">
+    <div className="px-36 overflow-hidden ">
       <div className="flex items-center justify-between">
         <div className="w-2/3">
           <h1 className="font-bold text-[#1E8B43] border-l-8 border-[#1E8B43] pl-2 mb-10">

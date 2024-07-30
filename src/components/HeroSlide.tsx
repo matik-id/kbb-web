@@ -9,11 +9,11 @@ const HeroSlide = () => {
     "https://fastly.picsum.photos/id/12/2500/1667.jpg?hmac=Pe3284luVre9ZqNzv1jMFpLihFI6lwq7TPgMSsNXw2w",
   ];
   return (
-    <div className="w-full px-36 mt-5 flex gap-5 overflow-hidden">
-      <div className="w-2/3 h-[100px]">
+    <div className="w-full px-2 md:px-36 mt-5  md:flex gap-5 overflow-hidden">
+      <div className="md:w-2/3 h-[100px]">
         <NewSlider slides={slides} autoSlide />
       </div>
-      <div className="bg-white h-full w-1/3 rounded-lg p-5 shadow-md">
+      <div className="bg-white h-full md:w-1/3 rounded-lg p-5 shadow-md">
         <h1 className="font-bold text-[#1E8B43] border-l-8 border-[#1E8B43] pl-2">
           Kegiatan Rutin Bubuhan Banjar
         </h1>

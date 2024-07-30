@@ -10,14 +10,14 @@ export default function ImageCarousel() {
   ];
 
   return (
-    <div className="px-36 mt-10  ">
-      <div className="flex items-center justify-between">
-        <div className="w-2/3">
+    <div className="px-4 md:px-36 mt-10 overflow-hidden ">
+      <div className="grid grid-cols-1 gap-24 md:flex items-center justify-between">
+        <div className="md:w-2/3">
           <h1 className="font-bold text-[#1E8B43] border-l-8 border-[#1E8B43] pl-2 mb-10">
             Berita Banjar
           </h1>
           <div className="flex flex-col gap-5">
-            <div className="grid grid-cols-3 gap-5">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-5">
               <div>
                 <div className="overflow-hidden">
                   <img
@@ -58,47 +58,7 @@ export default function ImageCarousel() {
                 <p className="text-gray-500 text-sm">Jum'at, 10 Agustus 2022</p>
               </div>
             </div>
-            <div className="grid grid-cols-3 gap-5">
-              <div>
-                <div className="overflow-hidden">
-                  <img
-                    src="/image-4.jpg"
-                    alt=""
-                    className="h-[200px] w-[300px]  object-cover hover:scale-105 transition-all duration-500 grayscale-0"
-                  />
-                </div>
-                <p className="font-bold hover:text-[#1E8B43]">
-                  Musyawarah dan Pelantikan Pengu...
-                </p>
-                <p className="text-gray-500 text-sm">Jum'at, 10 Agustus 2022</p>
-              </div>
-              <div>
-                <div className="overflow-hidden">
-                  <img
-                    src="/image-5.jpg"
-                    alt=""
-                    className="h-[200px] w-[300px]  object-cover hover:scale-105 transition-all duration-500 grayscale-0"
-                  />
-                </div>
-                <p className="font-bold hover:text-[#1E8B43]">
-                  Family Gathering Banjar diikuti oleh ...
-                </p>
-                <p className="text-gray-500 text-sm">Jum'at, 10 Agustus 2022</p>
-              </div>
-              <div>
-                <div className="overflow-hidden">
-                  <img
-                    src="/image-6.jpeg"
-                    alt=""
-                    className="h-[200px] w-[300px]  object-cover hover:scale-105 transition-all duration-500 grayscale-0"
-                  />
-                </div>
-                <p className="font-bold hover:text-[#1E8B43]">
-                  Pelatihan dan pelantikan Pengurus ...
-                </p>
-                <p className="text-gray-500 text-sm">Jum'at, 10 Agustus 2022</p>
-              </div>
-            </div>
+            
             <div className="flex justify-end mt-4">
               <button className="bg-[#84CC16] text-white px-5 py-2 rounded-lg hover:bg-[#84CC16]/90 transition-all duration-500 mb-10">
                 Selengkapnya
@@ -106,7 +66,7 @@ export default function ImageCarousel() {
             </div>
           </div>
         </div>
-        <div className="w-1/3 ml-2">
+        <div className="md:w-1/3 ml-2">
           <h1 className="font-bold text-[#1E8B43] mt-[-200px] border-l-8 border-[#1E8B43] pl-2 mb-4">
             Produk UMKM Banjar
           </h1>
