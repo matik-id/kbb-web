@@ -2,6 +2,7 @@ import img1 from "https://i.ibb.co/ncrXc2V/1.png";
 import img2 from "https://i.ibb.co/B3s7v4h/2.png";
 import img3 from "https://i.ibb.co/ncrXc2V/1.png";
 import NewSlider from "./NewSlider";
+import { Carousel } from "flowbite-react";
 
 export default function ImageCarousel() {
   const slides: string[] = [
@@ -10,7 +11,7 @@ export default function ImageCarousel() {
   ];
 
   return (
-    <div className="px-4 md:px-36 mt-10 overflow-hidden ">
+    <div className="px-4 md:px-36 overflow-hidden ">
       <div className="grid grid-cols-1 gap-24 md:flex items-center justify-between">
         <div className="md:w-2/3">
           <h1 className="font-bold text-[#1E8B43] border-l-8 border-[#1E8B43] pl-2 mb-10">
@@ -60,23 +61,43 @@ export default function ImageCarousel() {
             </div>
             
             <div className="flex justify-end mt-4">
-              <button className="bg-[#84CC16] text-white px-5 py-2 rounded-lg hover:bg-[#84CC16]/90 transition-all duration-500 mb-10">
+              <button className="bg-[#84CC16] text-white px-5 py-2 rounded-lg hover:bg-[#84CC16]/90 transition-all duration-500 ">
                 Selengkapnya
               </button>
             </div>
           </div>
         </div>
         <div className="md:w-1/3 ml-2">
-          <h1 className="font-bold text-[#1E8B43] mt-[-200px] border-l-8 border-[#1E8B43] pl-2 mb-4">
+          <h1 className="font-bold text-[#1E8B43] border-l-8 border-[#1E8B43] pl-2 mb-4">
             Produk UMKM Banjar
           </h1>
-          <div className="w-[500px] ">
-            <div className="max-w-lg">
-              <NewSlider slides={slides} />
+          <div className="h-56 sm:h-64 xl:h-80 2xl:h-96">
+          <Carousel pauseOnHover>
+            <div>
+              <img
+                src="https://cf.shopee.co.id/file/9c1328fd8eea5734e7a6efc99b289080"
+                alt=""
+                className="object-cover w-full h-full"
+              />
             </div>
+            <div>
+              <img
+                src="https://radartasik.disway.id/upload/9004acec4a142920dafcaa1a1baac911.jpg"
+                alt=""
+                className="object-cover w-full h-full"
+              />
+            </div>
+            <div>
+              <img
+                src="https://img.harianjogja.com/posts/2019/07/29/1008734/31-umkm-foto-2.jpg"
+                alt=""
+                className="object-cover w-full h-full"
+              />
+            </div>
+          </Carousel>
+        </div>
           </div>
         </div>
-      </div>
     </div>
   );
 }

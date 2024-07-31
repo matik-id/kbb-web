@@ -5,7 +5,6 @@ import HeroSlide from "@/components/HeroSlide";
 import Navbar from "@/components/Navbar";
 import RunningText from "@/components/RunningText";
 import Wisata from "@/components/Wisata";
-import Image from "next/image";
 
 export default function Home() {
   return (

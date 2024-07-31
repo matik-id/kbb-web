@@ -17,6 +17,7 @@ const Gallery = () => {
             <img src="/image-6.jpeg" alt="" className="h-[200px] w-[300px]  object-cover hover:scale-105 transition-all duration-500" />
             </Marquee>
         </div>
+        
     </div>
   )
 }

@@ -32,7 +32,12 @@ export default function NewSlider({
         style={{ transform: `translateX(-${curr * 100}%)` }}
       >
         {slides.map((img) => (
+          <>
           <img src={img} alt="" className="object-cover" />
+          <div className="absolute bottom-0 left-0 flex items-center justify-start bg-[#1E8B43]">
+              <h1 className=" text-white px-4 py-2 ">Gerakan Tanam Seribu Pohon yang di inisiasi oleh Komunitas Kabubuhan Banjar Sadunia, yang di ikuti ...</h1>
+            </div>
+            </>
         ))}
       </div>
       <div className="absolute inset-0 flex items-center justify-between p-4">
