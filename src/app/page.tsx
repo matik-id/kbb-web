@@ -1,4 +1,5 @@
 import Banner from "@/components/Banner";
+import Donation from "@/components/Donation";
 import Footer from "@/components/Footer";
 import Gallery from "@/components/Gallery";
 import HeroSlide from "@/components/HeroSlide";
@@ -16,6 +17,7 @@ export default function Home() {
       <HeroSlide />
       <Wisata />
       <Gallery />
+      <Donation />
       <Banner />
       <Footer />
     </main>
