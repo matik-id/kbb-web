@@ -9,14 +9,14 @@ import Wisata from "@/components/Wisata";
 
 export default function Home() {
   return (
-    <main className="mx-auto">
+    <main className="mx-auto bg">
       <nav className="sticky top-0 z-50 bg-[#FFFFFF]">
         <Navbar />
       </nav>
       <RunningText />
       <HeroSlide />
       <Wisata />
-      <Gallery />
+      {/* <Gallery /> */}
       <Donation />
       <Banner />
       <Footer />

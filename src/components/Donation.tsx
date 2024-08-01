@@ -8,6 +8,7 @@ import { Card } from "flowbite-react";
 
 const Donation = () => {
   const [data, setData] = useState<ApiResponseDonations>();
+  const [destination, setDestination] = useState<ApiResponseDestinations>();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -27,16 +28,17 @@ const Donation = () => {
     };
     fetchData();
   }, []);
+  
 
   return (
-    <div className="px-4 md:px-36 mt-5 mb-24 overflow-hidden">
+    <div className="px-4 md:px-36 md:py-10 mt-5 mb-4 overflow-hidden ">
       <h1 className="font-bold text-[#1E8B43] border-l-8 border-[#1E8B43] pl-2 mb-10">
-        Donasi Bantuan
+        Donasi Kemanusiaan
       </h1>
       
       <div className="grid grid-cols-1 gap-4 md:grid-cols-3 items-center justify-between">
         {/* donation card */}
-        {data?.data.records.map((item, index) => (
+        {data?.data.records.slice(0, 3).map((item, index) => (
           <div key={index} className="w-[350px] h-[400px] shadow-xl rounded-lg overflow-hidden">
             <img src={item.image} alt="" className="h-[200px] w-full  object-cover hover:scale-105 transition-all duration-500 " />
             <p className=" p-1 flex items-center bg-[#1E8B43] text-white font-bold rounded-b-lg"><BiSolidMap/> {item.location}</p>
