@@ -97,7 +97,9 @@ export default function ImageCarousel() {
             
 
             <div className="flex justify-end mt-4">
-              <button className="bg-[#84CC16] text-white px-5 py-2 rounded-lg hover:bg-[#84CC16]/90 transition-all duration-500 ">
+              <button className="bg-[#84CC16] text-white px-5 py-2 rounded-lg hover:bg-[#84CC16]/90 transition-all duration-500 
+              "
+              onClick={() => window.location.href = "/wisata"}>
                 Selengkapnya
               </button>
             </div>

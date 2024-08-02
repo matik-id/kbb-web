@@ -36,10 +36,10 @@ const Donation = () => {
         Donasi Kemanusiaan
       </h1>
       
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-3 items-center justify-between">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-3 items-center justify-between ">
         {/* donation card */}
         {data?.data.records.slice(0, 3).map((item, index) => (
-          <div key={index} className="w-[350px] h-[400px] shadow-xl rounded-lg overflow-hidden">
+          <div key={index} className="w-full md:w-[350px] h-[400px] shadow-xl rounded-lg overflow-hidden">
             <img src={item.image} alt="" className="h-[200px] w-full  object-cover hover:scale-105 transition-all duration-500 " />
             <p className=" p-1 flex items-center bg-[#1E8B43] text-white font-bold rounded-b-lg"><BiSolidMap/> {item.location}</p>
             <div className="pt-2 px-4">
