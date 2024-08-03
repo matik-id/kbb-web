@@ -10,30 +10,30 @@ const Navbar = () => {
         <ul className="text-black capitalize flex gap-8 font-semibold">
           <li>
             <a
-              href=""
+              href="/"
               className="hover:text-[#84CC16] hover:underline underline-offset-4 transition-all duration-500"
             >
               beranda
             </a>
           </li>
           <li>
-            <a href="" className="hover:text-[#84CC16]">
+            <a href="/post/list" className="hover:text-[#84CC16]">
               Berita
             </a>
           </li>
           <li>
-            <a href="" className="hover:text-[#84CC16]">
-              Kegiatan
+            <a href="/destination/list" className="hover:text-[#84CC16]">
+              Wisata
             </a>
           </li>
           <li>
-            <a href="" className="hover:text-[#84CC16]">
-              event
+            <a href="/product/list" className="hover:text-[#84CC16]">
+              Produk
             </a>
           </li>
           <li>
-            <a href="" className="hover:text-[#84CC16]">
-              Kontak
+            <a href="/donation/list" className="hover:text-[#84CC16]">
+              Donasi
             </a>
           </li>
         </ul>

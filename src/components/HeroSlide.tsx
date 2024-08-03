@@ -3,9 +3,12 @@ import { Carousel } from "flowbite-react";
 import NewSlider from "./NewSlider";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { useRouter } from "next/navigation";
 
 const HeroSlide = () => {
   const [post, setPosts] = useState<ApiResponsePosts>();
+  const router = useRouter();
+
 
   useEffect(() => {
     const fetchData = async () => {
@@ -55,7 +58,8 @@ const HeroSlide = () => {
         </h1>
         {post?.data.records.slice(0, 3).map((item, index) => (
           <>
-            <div key={index} className="flex gap-5  rounded-lg mt-5">
+            <div key={index} className="flex gap-5  rounded-lg mt-5 cursor-pointer"
+            onClick={() => router.push(`/post/view/${decodeURI(item.title)}/${item.id}`)}>
               <div className="w-[200px] h-[80px] bg-white">
                 <img
                   src={item.image}
@@ -78,7 +82,8 @@ const HeroSlide = () => {
           </>
         ))}
         <div className="flex justify-end mt-10">
-          <button className="bg-[#84CC16] text-white px-5 py-2 rounded-lg hover:bg-[#84CC16]/90 transition-all duration-500 ">
+          <button className="bg-[#84CC16] text-white px-5 py-2 rounded-lg hover:bg-[#84CC16]/90 transition-all duration-500 "
+          onClick={() => window.location.href = "/post/list"}>
             Selengkapnya
           </button>
         </div>

@@ -7,7 +7,7 @@ import { useParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import Marquee from "react-fast-marquee";
 const page = () => {
-  const [destination, setDestination] = useState<DestinationData>();
+  const [destination, setDestination] = useState<PostDetail>();
 
   const { id } = useParams();
 
@@ -15,7 +15,7 @@ const page = () => {
     const fetchData = async () => {
       try {
         const res = await axios.get(
-          `${process.env.NEXT_PUBLIC_API_URL}destination/ ${id}`,
+          `${process.env.NEXT_PUBLIC_API_URL}donation/ ${id}`,
           {
             headers: {
               Authorization: `Bearer ${process.env.NEXT_PUBLIC_AUTH_TOKEN}`,
@@ -38,15 +38,15 @@ const page = () => {
       <div className=" px-4 md:px-36 bg-white flex flex-col">
         <Breadcrumb className="mt-5  font-bold text-[#1E8B43]">
           <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
-          <Breadcrumb.Item href="/wisata">Wisata</Breadcrumb.Item>
-          <Breadcrumb.Item href="/wisata">
-            {destination?.data.name}
+          <Breadcrumb.Item href="/destination/list">Wisata</Breadcrumb.Item>
+          <Breadcrumb.Item href="/destination/list">
+            {destination?.data.title}
           </Breadcrumb.Item>
         </Breadcrumb>
         <div className="flex gap-5 mt-10 mb-96">
           <div className="text-center flex flex-col items-center w-3/4 ">
             <h1 className="font-bold md:text-4xl mt-5 text-[#000000] mb-2 ">
-              {destination?.data.name}
+              {destination?.data.title}
             </h1>
             <p className="mt-2 mb-10 text-[#1E8B43] ">
               {destination?.data.created_at &&
@@ -58,30 +58,13 @@ const page = () => {
                 }).format(new Date(destination?.data.created_at))}
             </p>
             <img
-              src={destination?.data.thumbnail}
+              src={destination?.data.image}
               alt=""
               className="h-[400px] w-full object-cover rounded-lg  mb-3"
             />
             <div className="text-justify mt-10">
               <p className="text-justify">{destination?.data.content}</p>
             </div>
-
-        <div className='mt-24 h-[300px] overflow-hidden '>
-        <h1 className="font-bold text-[#1E8B43] border-l-8 border-[#1E8B43] pl-2 mb-4 text-left">
-        Galeri Foto dan Video 
-        </h1>
-        <div className='flex overflow-hidden'>
-        <Marquee >
-            <img src={destination?.data.image1} alt="" className="h-[200px] w-[300px]  object-cover hover:scale-105 transition-all duration-500" />
-            <img src={destination?.data.image2} alt="" className="h-[200px] w-[300px]  object-cover hover:scale-105 transition-all duration-500" />
-            <img src={destination?.data.image3} alt="" className="h-[200px] w-[300px]  object-cover hover:scale-105 transition-all duration-500" />
-            <div>
-                <video src={destination?.data.video}></video>
-            </div>
-            </Marquee>
-        </div>
-        
-    </div>
           </div>
           <div className="text-center w-1/4 mx-auto bg-black">
             <h1 className="font-bold text-[#1E8B43] border-l-8 border-[#1E8B43] pl-2 mb-4">
@@ -90,7 +73,7 @@ const page = () => {
           </div>
         </div>
       </div>
-      <div>
+      <div >
         <Footer />
       </div>
     </div>

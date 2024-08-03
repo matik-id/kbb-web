@@ -1,6 +1,10 @@
+'use client';
+import { useRouter } from "next/navigation";
 import React from "react";
 
 const Banner = () => {
+  const router = useRouter();
+
   return (
     <div
       className=" px-3 mx-3 md:mx-36 md:px-36 py-5 bg-cover bg-center bg-no-repeat h-[300px] mb-5 text-white rounded-2xl overflow-hidden"
@@ -14,7 +18,8 @@ const Banner = () => {
               Ingin Berdonasi untuk Perkembangan Kabubuhan Banjar Sa-Dunia?
             </h1>
             <div className="md:mt-4 mt-8 ">
-              <button className="bg-[#84CC16] text-white px-5 py-2 rounded-lg hover:bg-[#84CC16]/90 transition-all duration-500 mb-10">
+              <button className="bg-[#84CC16] text-white px-5 py-2 rounded-lg hover:bg-[#84CC16]/90 transition-all duration-500 mb-10"
+              onClick={() => window.location.href = "/donation/list"}>
                 Klik disini
               </button>
             </div>

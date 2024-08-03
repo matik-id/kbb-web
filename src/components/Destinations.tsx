@@ -10,9 +10,11 @@ import axios from "axios";
 import { BsEye, BsFilePerson } from "react-icons/bs";
 import { FaUserAlt } from "react-icons/fa";
 import { FiPhone } from "react-icons/fi";
+import { useRouter } from "next/navigation";
 
-export default function ImageCarousel() {
-  
+export default function Destinations() {
+
+  const router = useRouter();
 
   const [data, setData] = useState<ApiResponseProducts>();
 
@@ -68,7 +70,7 @@ export default function ImageCarousel() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
           {destination?.data.records.slice(0, 3).map((item, index) => (
             <>
-            <div key={index} className="cursor-pointer" onClick={() => window.open(`/wisata/${item.id}`)}>
+            <div key={index} className="cursor-pointer" onClick={() => router.push(`/destination/view/${decodeURI(item.name)}/${item.id}`)}>
                 <div className="overflow-hidden">
                   <img
                     src={item.thumbnail}
@@ -99,7 +101,7 @@ export default function ImageCarousel() {
             <div className="flex justify-end mt-4">
               <button className="bg-[#84CC16] text-white px-5 py-2 rounded-lg hover:bg-[#84CC16]/90 transition-all duration-500 
               "
-              onClick={() => window.location.href = "/wisata"}>
+              onClick={() => window.location.href = "/destination/list"}>
                 Selengkapnya
               </button>
             </div>
@@ -113,7 +115,9 @@ export default function ImageCarousel() {
             {data?.data.records.slice(0, 2).map((item, index) => (
               <div
                 key={index}
-                className="border border-gray-200 rounded-lg shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-500  gap-3 w-[188px] h-[352px] "
+                className="border border-gray-200 rounded-lg shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-500  gap-3 w-[188px] h-[352px] 
+                cursor-pointer"
+                onClick={() => router.push(`/product/view/${decodeURI(item.title)}/${item.id}`)}
               >
                 <div className="overflow-hidden rounded-lg object-cover h-[189px]">
                 <img src={item.thumbnail} alt="" className="h-[189px] w-[188px] object-cover hover:scale-105 transition-all duration-500 " />
@@ -130,7 +134,8 @@ export default function ImageCarousel() {
                 </div>
                 <div className="flex justify-between p-2 items-center">
                   <p className="text-gray-500 text-sm flex items-center gap-1"><BsEye />{item.viewer}</p>
-                <button className="bg-[#84CC16] text-white px-2 py-1 rounded-lg hover:bg-[#84CC16]/90 transition-all duration-500 ">
+                <button className="bg-[#84CC16] text-white px-2 py-1 rounded-lg hover:bg-[#84CC16]/90 transition-all duration-500 "
+                onClick={() => router.push(`/product/view/${decodeURI(item.title)}/${item.id}`)}>
                   Lihat
                 </button>
                 </div>

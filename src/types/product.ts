@@ -54,3 +54,44 @@ interface ProductRecord {
     id: number;
     name: string;
   }
+
+  interface Category {
+    id: number;
+    name: string;
+  }
+  
+  interface DataDetailProducts {
+    id: number;
+    title: string;
+    owner: string;
+    phone: string;
+    thumbnail: string;
+    image1: string;
+    image2: string;
+    image3: string;
+    price: number;
+    price_promo: number;
+    content: string;
+    address: string;
+    link_youtube: string;
+    text_sharing: string;
+    viewer: number;
+    is_terlaris: boolean;
+    is_publish: boolean;
+    created_at: string;
+    updated_at: string;
+    deleted_at: string | null;
+    category_id: number;
+    province_id: number;
+    regency_id: number;
+    category: Category;
+  }
+  
+  interface DataDetail {
+    status: number;
+    message: string;
+    data: DataDetailProducts;
+    timestamp: string;
+    path: string;
+  }
+  

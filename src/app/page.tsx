@@ -1,11 +1,10 @@
 import Banner from "@/components/Banner";
+import Destinations from "@/components/Destinations";
 import Donation from "@/components/Donation";
 import Footer from "@/components/Footer";
-import Gallery from "@/components/Gallery";
 import HeroSlide from "@/components/HeroSlide";
 import Navbar from "@/components/Navbar";
 import RunningText from "@/components/RunningText";
-import Wisata from "@/components/Wisata";
 
 export default function Home() {
   return (
@@ -15,8 +14,7 @@ export default function Home() {
       </nav>
       <RunningText />
       <HeroSlide />
-      <Wisata />
-      {/* <Gallery /> */}
+      <Destinations />
       <Donation />
       <Banner />
       <Footer />
