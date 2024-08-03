@@ -47,7 +47,7 @@ const page = () => {
             <>
               <div key={index} className="flex gap-5 items-center mb-5  transition-all duration-500 cursor-pointer border-b pb-5"
               
-              onClick={() => window.open(``)}>
+              onClick={() => window.open(`/wisata/${item.id}`)}>
                 <div className="overflow-hidden ">
                   <img
                     src={item.thumbnail}

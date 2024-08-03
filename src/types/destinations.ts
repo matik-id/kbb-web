@@ -45,4 +45,34 @@ interface DestinationRecord {
     timestamp: string;
     path: string;
   }
+
+  interface DestinationData {
+    status: number;
+    message: string;
+    data: {
+      id: number;
+      name: string;
+      coordinate: string;
+      thumbnail: string;
+      image1: string;
+      image2: string;
+      image3: string;
+      video: string;
+      address: string;
+      content: string;
+      text_sharing: null | string; // Allow null or string for text_sharing
+      viewer: number;
+      is_publish: boolean;
+      created_at: string;
+      updated_at: string;
+      deleted_at: null | string; // Allow null or string for deleted_at
+      admin_id: null | number; // Allow null or number for admin_id
+      category_id: null | number; // Allow null or number for category_id
+      province_id: null | number; // Allow null or number for province_id
+      regency_id: null | number; // Allow null or number for regency_id
+      category: null | string; // Allow null or string for category
+    };
+    timestamp: string;
+    path: string;
+  }
   

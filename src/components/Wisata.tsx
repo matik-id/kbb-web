@@ -68,7 +68,7 @@ export default function ImageCarousel() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
           {destination?.data.records.slice(0, 3).map((item, index) => (
             <>
-            <div key={index}>
+            <div key={index} className="cursor-pointer" onClick={() => window.open(`/wisata/${item.id}`)}>
                 <div className="overflow-hidden">
                   <img
                     src={item.thumbnail}
