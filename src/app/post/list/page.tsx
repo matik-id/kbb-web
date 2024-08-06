@@ -37,10 +37,10 @@ const page = () => {
       <nav className="sticky top-0 z-50 bg-[#FFFFFF]">
         <Navbar />
       </nav>
-      <div className=" px-4 md:px-36 bg-white flex flex-col">
+      <div className=" px-4 md:px-36 flex flex-col ">
         <Breadcrumb className="mt-5  font-bold text-[#1E8B43]">
-          <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
-          <Breadcrumb.Item href="/destination/list">Berita</Breadcrumb.Item>
+          <Breadcrumb.Item href="/" >Home</Breadcrumb.Item>
+          <Breadcrumb.Item href="/post/list">Berita</Breadcrumb.Item>
         </Breadcrumb>
         <div>
           <h1 className="font-bold text-3xl mt-5 text-[#000000] border-l-8 border-[#1E8B43] pl-2 mb-10 ">Berita </h1>
@@ -49,7 +49,8 @@ const page = () => {
         <div className="mt-3 min-h-0">
           {post?.data.records.map((item, index) => (
             <>
-              <div key={index} className="flex gap-5 items-center mb-5  transition-all duration-500 cursor-pointer border-b pb-5"
+              <div key={index} className="flex gap-5 items-center mb-5  transition-all duration-500 cursor-pointer border-b  
+              hover:text-[#1E8B43] hover:bg-gray-200"
               
               onClick={() => router.push(`/post/view/${decodeURI(item.title)}/${item.id}`)}>
               
@@ -69,7 +70,7 @@ const page = () => {
                 </p> */}
                 <p className="text-gray-500 text-sm">
                   {new Intl.DateTimeFormat("id-ID", {
-                    weekday: "short",
+                    weekday: "long",
                     day: "numeric",
                     month: "long",
                     year: "numeric",

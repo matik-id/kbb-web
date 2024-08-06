@@ -1,6 +1,5 @@
 "use client";
 import { Carousel } from "flowbite-react";
-import NewSlider from "./NewSlider";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useRouter } from "next/navigation";
@@ -33,7 +32,8 @@ const HeroSlide = () => {
     <div className="w-full px-2 md:px-36 mt-5 md:flex gap-5 overflow-hidden">
       <div className="md:w-2/3 md:h-[500px] ">
         <div className="h-56 sm:h-64 xl:h-80 2xl:h-96">
-          <Carousel pauseOnHover>
+          
+          <Carousel pauseOnHover leftControl={<></>} indicators={false}>
             {post?.data.records.map((item, index) => (
               <>
                 <div key={index}>
@@ -58,7 +58,7 @@ const HeroSlide = () => {
         </h1>
         {post?.data.records.slice(0, 3).map((item, index) => (
           <>
-            <div key={index} className="flex gap-5  rounded-lg mt-5 cursor-pointer"
+            <div key={index} className="flex gap-5  rounded-lg mt-5 cursor-pointer hover:scale-105 transition-all duration-500 hover:bg-gray-200 hover:shadow-lg hover:p-2"
             onClick={() => router.push(`/post/view/${decodeURI(item.title)}/${item.id}`)}>
               <div className="w-[200px] h-[80px] bg-white">
                 <img
@@ -71,7 +71,7 @@ const HeroSlide = () => {
                 <h1 className="font-bold">{item.title.length > 34 ? `${item.title.slice(0, 20)}...` : item.title}</h1>
                 <p className="text-gray-500 text-sm">
                   {new Intl.DateTimeFormat('id-ID', {
-                    weekday: 'short',
+                    weekday: 'long',
                     day: 'numeric',
                     month: 'long',
                     year: 'numeric',
@@ -82,7 +82,7 @@ const HeroSlide = () => {
           </>
         ))}
         <div className="flex justify-end mt-10">
-          <button className="bg-[#84CC16] text-white px-5 py-2 rounded-lg hover:bg-[#84CC16]/90 transition-all duration-500 "
+          <button className="bg-[#84CC16] text-white px-5 py-2 rounded-lg hover:bg-[#84CC16]/70 transition-all duration-500 "
           onClick={() => window.location.href = "/post/list"}>
             Selengkapnya
           </button>

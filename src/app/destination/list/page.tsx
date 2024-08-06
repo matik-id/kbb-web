@@ -49,7 +49,7 @@ const page = () => {
         <div className="mt-3 min-h-0">
           {destination?.data.records.map((item, index) => (
             <>
-              <div key={index} className="flex gap-5 items-center mb-5  transition-all duration-500 cursor-pointer border-b pb-5"
+              <div key={index} className="flex gap-5 items-center mb-5  transition-all duration-500 cursor-pointer border-b  hover:text-[#1E8B43] hover:bg-gray-200"
               
               onClick={() => router.push(`/destination/view/${decodeURI(item.name)}/${item.id}`)}>
               
@@ -69,7 +69,7 @@ const page = () => {
                 </p>
                 <p className="text-gray-500 text-sm">
                   {new Intl.DateTimeFormat("id-ID", {
-                    weekday: "short",
+                    weekday: "long",
                     day: "numeric",
                     month: "long",
                     year: "numeric",

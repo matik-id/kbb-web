@@ -61,7 +61,7 @@ const page = () => {
                 <img src={item.thumbnail} alt="" className="h-[189px] w-[188px] object-cover hover:scale-105 transition-all duration-500 " />
                 </div>
                 <div className="p-2">
-                <h1 className=" text-[#1E8B43] mb-2 font-bold">{item.title}</h1>
+                <h1 className=" text-[#1E8B43] mb-2 font-bold">{item.title.length > 15 ? `${item.title.slice(0, 15)}...` : item.title }</h1>
                 <p className=" text-sm font-bold mb-1">Rp {item.price.toLocaleString('id-ID')}</p>
                 <p className="text-gray-500 text-sm flex items-center gap-1 mb-1">
                   <FaUserAlt  />

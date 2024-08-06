@@ -13,35 +13,33 @@ const Navbar = () => {
               href="/"
               className="hover:text-[#84CC16] hover:underline underline-offset-4 transition-all duration-500"
             >
-              beranda
+              Beranda
             </a>
           </li>
           <li>
-            <a href="/post/list" className="hover:text-[#84CC16]">
+            <a href="/post/list" className="hover:text-[#84CC16] hover:underline underline-offset-4 transition-all duration-500">
               Berita
             </a>
           </li>
           <li>
-            <a href="/destination/list" className="hover:text-[#84CC16]">
+            <a href="/destination/list" className="hover:text-[#84CC16] hover:underline underline-offset-4 transition-all duration-500">
               Wisata
             </a>
           </li>
           <li>
-            <a href="/product/list" className="hover:text-[#84CC16]">
+            <a href="/product/list" className="hover:text-[#84CC16] hover:underline underline-offset-4 transition-all duration-500">
               Produk
             </a>
           </li>
           <li>
-            <a href="/donation/list" className="hover:text-[#84CC16]">
+            <a href="/donation/list" className="hover:text-[#84CC16] hover:underline underline-offset-4 transition-all duration-500">
               Donasi
             </a>
           </li>
         </ul>
       </div>
 
-      <div className="md:hidden">
-        menu
-      </div>
+      
     </div>
   );
 };

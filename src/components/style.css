@@ -1,0 +1,26 @@
+.swiper-button-next, 
+.swiper-button-prev {
+  color: white;
+  background-color: green;
+  font-size: 20px;
+  padding: 20px;
+  border-radius: 50%;
+}
+
+.swiper-button-next:after, 
+.swiper-button-prev:after {
+  font-size: 20px;
+}
+
+.swiper-button-next.swiper-button-disabled, 
+.swiper-button-prev.swiper-button-disabled {
+    opacity: 0;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: green !important;
+}
+
+.swiper-pagination-bullet {
+  background-color: rgba(255, 0, 0, 0.5);
+}

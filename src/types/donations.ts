@@ -34,7 +34,7 @@ interface DonationRecord {
   }
   
   // Interface for the data object containing records and metadata
-  interface Data {
+  interface DataDoonation {
     records: DonationRecord[];
     metadata: Metadata;
   }
@@ -43,7 +43,7 @@ interface DonationRecord {
   interface ApiResponseDonations {
     status: number;
     message: string;
-    data: Data;
+    data: DataDoonation;
     timestamp: string;
     path: string;
   }
