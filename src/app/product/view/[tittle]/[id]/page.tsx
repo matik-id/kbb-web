@@ -32,7 +32,8 @@ import './styles.css';
 import { FreeMode, Navigation, Thumbs } from 'swiper/modules';
 const page = () => {
   const [destination, setDestination] = useState<DataDetail>();
-
+  
+  const [thumbsSwiper, setThumbsSwiper] = useState<any>(null);
   const { id } = useParams();
 
   useEffect(() => {
@@ -54,8 +55,7 @@ const page = () => {
     fetchData();
   }, []);
 
-  const [thumbsSwiper, setThumbsSwiper] = useState(null);
-
+  
 
   return (
     <div>
@@ -65,44 +65,19 @@ const page = () => {
       <div className=" px-4 md:px-36 bg-white flex flex-col">
         <Breadcrumb className="mt-5  font-bold text-[#1E8B43]">
           <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
-          <Breadcrumb.Item href="/destination/list">Wisata</Breadcrumb.Item>
-          <Breadcrumb.Item href="/destination/list">
+          <Breadcrumb.Item href="/product/list">Product</Breadcrumb.Item>
+          <Breadcrumb.Item href="/product/list">
             {destination?.data.title}
           </Breadcrumb.Item>
         </Breadcrumb>
         <div className="flex gap-10 mt-10 mb-96">
-          {/* <div>
-            <div>
-              <img
-                src={destination?.data.thumbnail}
-                alt=""
-                className="w-[405px] h-[400px] object-cover hover:border-2 border-[#1E8B43] cursor-pointer"
-              />
-            </div>
-            <div className="grid grid-cols-3 ">
-              <img
-                src={destination?.data.image1}
-                alt=""
-                className="w-[135px] h-[135px] object-cover hover:border-2 border-[#1E8B43] cursor-pointer"
-              />
-              <img
-                src={destination?.data.image2}
-                alt=""
-                className="w-[135px] h-[135px] object-cover hover:border-2 border-[#1E8B43] cursor-pointer "
-              />
-              <img
-                src={destination?.data.image3}
-                alt=""
-                className="w-[135px] h-[135px] object-cover hover:border-2 border-[#1E8B43] cursor-pointer"
-              />
-            </div>
-          </div> */}
+         
           <div className="w-[405px]">
           <Swiper
-        style={{
-          '--swiper-navigation-color': '#fff',
-          '--swiper-pagination-color': '#fff',
-        }}
+        // style={{
+        //   '--swiper-navigation-color': '#fff',
+        //   '--swiper-pagination-color': '#fff',
+        // }}
         loop={true}
         spaceBetween={10}
         // navigation={true}

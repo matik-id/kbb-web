@@ -61,15 +61,15 @@ const page = () => {
         <Navbar />
       </nav>
       <div className=" px-4 md:px-36 bg-white flex flex-col">
-        <Breadcrumb className="mt-5  font-bold text-[#1E8B43]">
+        <Breadcrumb className="mt-5 font-bold text-[#1E8B43]">
           <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
-          <Breadcrumb.Item href="/post/list">Wisata</Breadcrumb.Item>
-          <Breadcrumb.Item href="/post/list">
+          <Breadcrumb.Item href="/post/list">Berita</Breadcrumb.Item>
+          <Breadcrumb.Item href="/post/list" className="hidden">
             {destination?.data.title}
           </Breadcrumb.Item>
         </Breadcrumb>
-        <div className="flex gap-5 mt-10 mb-96">
-          <div className="text-center flex flex-col items-center w-3/4 ">
+        <div className="flex flex-col md:flex-row gap-5 mt-10 mb-96 ">
+          <div className="text-center flex flex-col items-center w-3/4  ">
             <h1 className="font-bold md:text-4xl mt-5 text-[#000000] mb-2 ">
               {destination?.data.title}
             </h1>

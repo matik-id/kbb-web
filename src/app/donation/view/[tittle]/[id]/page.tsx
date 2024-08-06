@@ -2,19 +2,29 @@
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import axios from "axios";
-import { Breadcrumb } from "flowbite-react";
+import { Breadcrumb, Progress } from "flowbite-react";
 import { useParams, useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import Marquee from "react-fast-marquee";
+import { BiSolidMap } from "react-icons/bi";
 import { BsEye } from "react-icons/bs";
-import { FaUserAlt } from "react-icons/fa";
+import { FaMap, FaUserAlt } from "react-icons/fa";
+import { FaMapLocation, FaMapLocationDot } from "react-icons/fa6";
 const page = () => {
-  const [destination, setDestination] = useState<PostDetail>();
+  const [destination, setDestination] = useState<donationdetail>();
 
   const router = useRouter();
 
   const { id } = useParams();
   const [data, setData] = useState<ApiResponseProducts>();
+
+  const calculateRemainingDays = (start: string, end: string) => {
+    const startDate = new Date(start);
+    const endDate = new Date(end);
+    const timeDiff = endDate.getTime() - startDate.getTime();
+    const daysDiff = Math.ceil(timeDiff / (1000 * 3600 * 24));
+    return daysDiff;
+  };
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -33,7 +43,6 @@ const page = () => {
     };
     fetchData();
   }, []);
-
 
   useEffect(() => {
     const fetchData = async () => {
@@ -59,7 +68,7 @@ const page = () => {
       <nav className="sticky top-0 z-50 bg-[#FFFFFF]">
         <Navbar />
       </nav>
-      <div className=" px-4 md:px-36 bg-white flex flex-col">
+      <div className=" px-4 md:px-36 bg-white  md:flex flex-col">
         <Breadcrumb className="mt-5  font-bold text-[#1E8B43]">
           <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
           <Breadcrumb.Item href="/donation/list">Donasi</Breadcrumb.Item>
@@ -67,12 +76,12 @@ const page = () => {
             {destination?.data.title}
           </Breadcrumb.Item>
         </Breadcrumb>
-        <div className="flex gap-5 mt-10 mb-96">
+        <div className="md:flex gap-5 mt-10 mb-96">
           <div className="text-center flex flex-col items-center w-3/4 ">
             <h1 className="font-bold md:text-4xl mt-5 text-[#000000] mb-2 ">
               {destination?.data.title}
             </h1>
-            <p className="mt-2 mb-10 text-[#1E8B43] ">
+            <p className="mt-2  text-[#1E8B43] ">
               {destination?.data.created_at &&
                 new Intl.DateTimeFormat("id-ID", {
                   weekday: "long",
@@ -81,6 +90,7 @@ const page = () => {
                   year: "numeric",
                 }).format(new Date(destination?.data.created_at))}
             </p>
+            <p className="mb-10 text-gray-500 flex items-center gap-2"><BiSolidMap />{destination?.data.location}</p>
             <img
               src={destination?.data.image}
               alt=""
@@ -88,14 +98,36 @@ const page = () => {
             />
             <div className="text-justify mt-10">
               <p className="text-justify">{destination?.data.content}</p>
-              
+            </div>
+            <div className="mt-10 text-left w-[400px] flex flex-col gap-2 bg-gray-200 p-5 rounded">
+            {destination?.data &&(
+              <>
+             <h1 className="font-bold text-[#1E8B43] border-l-8 border-[#1E8B43] pl-2 mb-4">
+                Info Donasi 
+              </h1>
+              <p><p>Sisa Hari : <b>{destination ? calculateRemainingDays(destination.data.date_start, destination.data.date_end) + " hari tersisa" : null}</b>  </p></p>
+              <p>Target Donasi : <b>Rp {destination?.data.target_balance.toLocaleString('id-ID')}</b></p>
+              <p>Saldo Terkumpul : <b>Rp {destination?.data.balance_collected.toLocaleString('id-ID')}</b></p>
+              <Progress
+                progress={
+                  (destination?.data.balance_collected  /
+                    destination?.data.target_balance) *
+                  100
+                }
+                color="green"
+                size="xl"
+                progressLabelPosition="inside"
+                textLabelPosition="outside"
+              />
+              </>
+              )}
             </div>
           </div>
           <div className="text-left w-1/4 ml-10 ">
-          <div>
-            <h1 className="font-bold text-[#1E8B43] border-l-8 border-[#1E8B43] pl-2 mb-4">
-              Produk UMKM Pilihan
-            </h1>
+            <div>
+              <h1 className="font-bold text-[#1E8B43] border-l-8 border-[#1E8B43] pl-2 mb-4">
+                Produk UMKM Pilihan
+              </h1>
             </div>
             {data?.data.records
               .sort(() => Math.random() - 0.5)
@@ -105,11 +137,7 @@ const page = () => {
                   key={index}
                   className="border border-gray-200 rounded-lg shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-500  gap-3 w-[188px] h-[352px] mb-6
                 cursor-pointer"
-                  onClick={() =>
-                    router.push(
-                      `/product/list`
-                    )
-                  }
+                  onClick={() => router.push(`/product/list`)}
                 >
                   <div className="overflow-hidden rounded-lg object-cover h-[189px] ">
                     <img
@@ -120,7 +148,9 @@ const page = () => {
                   </div>
                   <div className="p-2">
                     <h1 className=" text-[#1E8B43] mb-2 font-bold">
-                      {item.title.length > 15 ? `${item.title.slice(0, 15)}...` : item.title }
+                      {item.title.length > 15
+                        ? `${item.title.slice(0, 15)}...`
+                        : item.title}
                     </h1>
                     <p className=" text-sm font-bold mb-1">
                       Rp {item.price.toLocaleString("id-ID")}
@@ -130,7 +160,6 @@ const page = () => {
                       {item.owner.slice(0, 10)}
                       {item.owner.length > 10 ? "..." : ""}
                     </p>
-                    
                   </div>
                   <div className="flex justify-between p-2 items-center">
                     <p className="text-gray-500 text-sm flex items-center gap-1">
@@ -139,11 +168,7 @@ const page = () => {
                     </p>
                     <button
                       className="bg-[#84CC16] text-white px-2 py-1 rounded-lg hover:bg-[#84CC16]/90 transition-all duration-500 "
-                      onClick={() =>
-                        router.push(
-                          `/product/list`
-                        )
-                      }
+                      onClick={() => router.push(`/product/list`)}
                     >
                       Lihat
                     </button>
@@ -153,7 +178,7 @@ const page = () => {
           </div>
         </div>
       </div>
-      <div >
+      <div>
         <Footer />
       </div>
     </div>

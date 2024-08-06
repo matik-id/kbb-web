@@ -47,4 +47,37 @@ interface DonationRecord {
     timestamp: string;
     path: string;
   }
+
+  interface donationdetail {
+    status: number;
+    message: string;
+    data: {
+      id: number;
+      title: string;
+      type: string;
+      location: string;
+      image: string;
+      content: string;
+      target_balance: number;
+      balance_collected: number;
+      date_start: string;
+      date_end: string;
+      link_youtube: string | null;
+      text_sharing: string | null;
+      viewer: number;
+      is_urgent: boolean;
+      is_publish: boolean;
+      created_at: string;
+      updated_at: string;
+      deleted_at: string | null;
+      admin_id: number | null;
+      category_id: number | null;
+      province_id: number | null;
+      regency_id: number | null;
+      category: string | null;
+    };
+    timestamp: string;
+    path: string;
+  }
+  
   
