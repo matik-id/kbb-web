@@ -3,7 +3,6 @@
 import img1 from "https://i.ibb.co/ncrXc2V/1.png";
 import img2 from "https://i.ibb.co/B3s7v4h/2.png";
 import img3 from "https://i.ibb.co/ncrXc2V/1.png";
-import NewSlider from "./NewSlider";
 import { Button, Carousel, Progress } from "flowbite-react";
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -16,7 +15,7 @@ import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import "./style.css";
+// import "./style.css";
 
 export default function Destinations() {
   const router = useRouter();

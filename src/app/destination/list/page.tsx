@@ -64,7 +64,7 @@ const page = () => {
                 <p className="font-bold hover:text-[#1E8B43] text-xl">
                   {item.name}
                 </p>
-                <p className=" hidden md:block text-[#1E8B43] text-sm md:flex items-center mb-4">
+                <p className=" hidden  text-[#1E8B43] text-sm md:flex items-center mb-4">
                   <BiSolidMap />{item.address}
                 </p>
                 <p className="text-gray-500 text-sm">

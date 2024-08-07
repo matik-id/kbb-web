@@ -1,13 +1,24 @@
 "use client";
 import { Carousel } from "flowbite-react";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import axios from "axios";
 import { useRouter } from "next/navigation";
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+
+// import './styles.css';
+
+// import required modules
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
 
 const HeroSlide = () => {
   const [post, setPosts] = useState<ApiResponsePosts>();
   const router = useRouter();
-
 
   useEffect(() => {
     const fetchData = async () => {
@@ -32,8 +43,37 @@ const HeroSlide = () => {
     <div className="w-full px-2 md:px-36 mt-5 md:flex gap-5 overflow-hidden">
       <div className="md:w-2/3 md:h-[500px] ">
         <div className="h-56 sm:h-64 xl:h-80 2xl:h-96">
-          
-          <Carousel pauseOnHover leftControl={<></>} indicators={false}>
+          <Swiper
+            spaceBetween={30}
+            centeredSlides={true}
+            autoplay={{
+              delay: 2500,
+              disableOnInteraction: false,
+            }}
+            pagination={{
+              clickable: true,
+            }}
+            navigation={true}
+            modules={[Autoplay, Pagination, Navigation]}
+            className="mySwiper"
+            
+            >
+            {post?.data.records.map((item, index) => (
+            <SwiperSlide>
+            <div key={index} className="border-4 border-[#1E8B43]">
+            <img
+              src={item.image}
+              alt=""
+              className="object-cover w-full h-full"
+            />
+            <div className="hidden md:absolute bottom-0 left-0 md:flex items-center justify-start bg-[#1E8B43] mb-8 w-full ">
+              <h1 className=" text-white px-4 py-2 ">{item.title}</h1>
+            </div>
+          </div></SwiperSlide>
+          ))}
+          </Swiper>
+
+          {/* <Carousel pauseOnHover leftControl={<></>} indicators={false}>
             {post?.data.records.map((item, index) => (
               <>
                 <div key={index}>
@@ -48,7 +88,7 @@ const HeroSlide = () => {
                 </div>
               </>
             ))}
-          </Carousel>
+          </Carousel> */}
         </div>
       </div>
 
@@ -58,8 +98,13 @@ const HeroSlide = () => {
         </h1>
         {post?.data.records.slice(0, 3).map((item, index) => (
           <>
-            <div key={index} className="flex gap-5  rounded-lg mt-5 cursor-pointer hover:scale-105 transition-all duration-500 hover:bg-gray-200 hover:shadow-lg hover:p-2"
-            onClick={() => router.push(`/post/view/${decodeURI(item.title)}/${item.id}`)}>
+            <div
+              key={index}
+              className="flex gap-5  rounded-lg mt-5 cursor-pointer hover:scale-105 transition-all duration-500 hover:bg-gray-200 hover:shadow-lg hover:p-2"
+              onClick={() =>
+                router.push(`/post/view/${decodeURI(item.title)}/${item.id}`)
+              }
+            >
               <div className="w-[200px] h-[80px] bg-white">
                 <img
                   src={item.image}
@@ -68,13 +113,17 @@ const HeroSlide = () => {
                 />
               </div>
               <div className="p-2 w-full">
-                <h1 className="font-bold">{item.title.length > 34 ? `${item.title.slice(0, 20)}...` : item.title}</h1>
+                <h1 className="font-bold">
+                  {item.title.length > 34
+                    ? `${item.title.slice(0, 20)}...`
+                    : item.title}
+                </h1>
                 <p className="text-gray-500 text-sm">
-                  {new Intl.DateTimeFormat('id-ID', {
-                    weekday: 'long',
-                    day: 'numeric',
-                    month: 'long',
-                    year: 'numeric',
+                  {new Intl.DateTimeFormat("id-ID", {
+                    weekday: "long",
+                    day: "numeric",
+                    month: "long",
+                    year: "numeric",
                   }).format(new Date(item.created_at))}
                 </p>
               </div>
@@ -82,8 +131,10 @@ const HeroSlide = () => {
           </>
         ))}
         <div className="flex justify-end mt-10">
-          <button className="bg-[#84CC16] text-white px-5 py-2 rounded-lg hover:bg-[#84CC16]/70 transition-all duration-500 "
-          onClick={() => window.location.href = "/post/list"}>
+          <button
+            className="bg-[#84CC16] text-white px-5 py-2 rounded-lg hover:bg-[#84CC16]/70 transition-all duration-500 "
+            onClick={() => (window.location.href = "/post/list")}
+          >
             Selengkapnya
           </button>
         </div>
