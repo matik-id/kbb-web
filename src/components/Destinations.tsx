@@ -15,7 +15,7 @@ import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-// import "./style.css";
+import "./style.css";
 
 export default function Destinations() {
   const router = useRouter();
