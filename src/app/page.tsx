@@ -1,4 +1,5 @@
 import Banner from "@/components/Banner";
+import CardDonate from "@/components/CardDonate";
 import Destinations from "@/components/Destinations";
 import DonationCard from "@/components/Donation";
 import Donation from "@/components/Donation";
@@ -18,7 +19,8 @@ export default function Home() {
       <HeroSlide />
       <Destinations />
       <Product />
-      <DonationCard />
+      <CardDonate />
+      {/* <DonationCard /> */}
       <Product />
       <Banner />
       <Footer />
