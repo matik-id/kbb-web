@@ -4,6 +4,7 @@ import Donation from "@/components/Donation";
 import Footer from "@/components/Footer";
 import HeroSlide from "@/components/HeroSlide";
 import Navbar from "@/components/Navbar";
+import Product from "@/components/Product";
 import RunningText from "@/components/RunningText";
 
 export default function Home() {
@@ -15,6 +16,7 @@ export default function Home() {
       <RunningText />
       <HeroSlide />
       <Destinations />
+      <Product />
       <Donation />
       <Banner />
       <Footer />
