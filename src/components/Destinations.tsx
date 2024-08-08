@@ -1,21 +1,9 @@
 "use client";
 
-import img1 from "https://i.ibb.co/ncrXc2V/1.png";
-import img2 from "https://i.ibb.co/B3s7v4h/2.png";
-import img3 from "https://i.ibb.co/ncrXc2V/1.png";
-import { Button, Carousel, Progress } from "flowbite-react";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { BsEye, BsFilePerson } from "react-icons/bs";
-import { FaUserAlt } from "react-icons/fa";
-import { FiPhone } from "react-icons/fi";
 import { useRouter } from "next/navigation";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Navigation, Pagination } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-import "./style.css";
+
 
 export default function Destinations() {
   const router = useRouter();
@@ -116,78 +104,7 @@ export default function Destinations() {
             </div>
           </div>
         </div>
-        {/* <div className="md:w-1/4 ">
-          <h1 className="font-bold text-[#1E8B43] border-l-8 border-[#1E8B43] pl-2 mb-4">
-            Produk UMKM
-          </h1>
-          <Swiper
-            slidesPerView={2}
-            spaceBetween={150}
-            pagination={{
-              clickable: true,
-            }}
-            autoplay={{
-              delay: 2500,
-              disableOnInteraction: false,
-            }}
-            modules={[Pagination,  Autoplay]}
-            className="mySwiper"
-            style={{ paddingLeft: "44px", paddingBottom: "36px" }}
-          >
-            {data?.data.records.slice(0, 5).map((item, index) => (
-              <SwiperSlide>
-                <div
-                  key={index}
-                  className="border border-gray-200 rounded-lg shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-500  gap-3 w-[188px] h-[352px] 
-                cursor-pointer"
-                  onClick={() =>
-                    router.push(
-                      `/product/list`
-                    )
-                  }
-                >
-                  <div className="overflow-hidden rounded-lg object-cover h-[189px]">
-                    <img
-                      src={item.thumbnail}
-                      alt=""
-                      className="h-[189px] w-[188px] object-cover hover:scale-105 transition-all duration-500 "
-                    />
-                  </div>
-                  <div className="p-2">
-                    <h1 className=" text-[#1E8B43] mb-2 font-bold">
-                      {item.title.length > 15 ? `${item.title.slice(0, 15)}...` : item.title }
-                    </h1>
-                    <p className=" text-sm font-bold mb-1">
-                      Rp {item.price.toLocaleString("id-ID")}
-                    </p>
-                    <p className="text-gray-500 text-sm flex items-center gap-1 mb-1">
-                      <FaUserAlt />
-                      {item.owner.slice(0, 10)}
-                      {item.owner.length > 10 ? "..." : ""}
-                    </p>
-                    
-                  </div>
-                  <div className="flex justify-between p-2 items-center">
-                    <p className="text-gray-500 text-sm flex items-center gap-1">
-                      <BsEye />
-                      {item.viewer}
-                    </p>
-                    <button
-                      className="bg-[#84CC16] text-white px-2 py-1 rounded-lg hover:bg-[#84CC16]/90 transition-all duration-500 "
-                      onClick={() =>
-                        router.push(
-                          `/product/list`
-                        )
-                      }
-                    >
-                      Lihat
-                    </button>
-                  </div>
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div> */}
+        
       </div>
     </div>
   );

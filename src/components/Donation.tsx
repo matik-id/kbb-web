@@ -2,22 +2,16 @@
 
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Button, Carousel, Progress } from "flowbite-react";
+import { Progress } from "flowbite-react";
 import { BiSolidMap } from "react-icons/bi";
-import { Card } from "flowbite-react";
 import { useRouter } from "next/navigation";
-import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 
 // Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
-import 'swiper/css/navigation';
-import "./style.css"
+
 
 
 
 // import required modules
-import { Pagination, Navigation } from "swiper/modules";
 
 const Donation = () => {
   const [data, setData] = useState<ApiResponseDonations>();
@@ -43,7 +37,6 @@ const Donation = () => {
     fetchData();
   }, []);
 
-  const swiper = useSwiper();
 
   return (
     <div className="px-4 md:px-36 md:py-10 mt-5 mb-4 overflow-hidden ">
@@ -51,21 +44,10 @@ const Donation = () => {
         Donasi Kemanusiaan
       </h1>
 
-      {/* <Swiper
-        slidesPerView={3}
-        spaceBetween={10}
-        pagination={{
-          clickable: true,     
-        }}
-        modules={[Pagination, Navigation]}
-        className="mySwiper"
-        navigation={true}
-        style={{  paddingLeft: "44px", paddingBottom: "36px" }}
-      >  */}
+     
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
         {data?.data.records.slice(0, 3).map((item, index) => (
-        // <SwiperSlide>
           <div
             key={index}
             className="w-full md:w-[350px] h-[400px] shadow-xl rounded-lg overflow-hidden cursor-pointer "
@@ -94,7 +76,6 @@ const Donation = () => {
               />
             </div>
           </div>
-          // </SwiperSlide>
         ))}
         </div>
         <div className="flex flex-col gap-5">
@@ -109,7 +90,6 @@ const Donation = () => {
             </div>
           </div>
       
-      {/* </Swiper> */}
 
       
     </div>
