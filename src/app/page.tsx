@@ -1,5 +1,6 @@
 import Banner from "@/components/Banner";
 import Destinations from "@/components/Destinations";
+import DonationCard from "@/components/Donation";
 import Donation from "@/components/Donation";
 import Footer from "@/components/Footer";
 import HeroSlide from "@/components/HeroSlide";
@@ -17,7 +18,7 @@ export default function Home() {
       <HeroSlide />
       <Destinations />
       <Product />
-      <Donation />
+      <DonationCard />
       <Banner />
       <Footer />
     </main>

@@ -6,14 +6,8 @@ import { Progress } from "flowbite-react";
 import { BiSolidMap } from "react-icons/bi";
 import { useRouter } from "next/navigation";
 
-// Import Swiper styles
 
-
-
-
-// import required modules
-
-const Donation = () => {
+const DonationCard = () => {
   const [data, setData] = useState<ApiResponseDonations>();
   const [destination, setDestination] = useState<ApiResponseDestinations>();
   const router = useRouter();
@@ -88,12 +82,9 @@ const Donation = () => {
                 Selengkapnya
               </button>
             </div>
-          </div>
-      
-
-      
+          </div>  
     </div>
   );
 };
 
-export default Donation;
+export default DonationCard;
