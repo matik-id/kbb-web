@@ -15,7 +15,6 @@ import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import "./style.css";
 
 export default function Product() {
   const router = useRouter();
@@ -67,10 +66,10 @@ export default function Product() {
       <div className="grid grid-cols-1 gap-24 md:flex items-center justify-between">
         
         <div className="md:w-full ">
-          <h1 className="font-bold text-[#1E8B43] border-l-8 border-[#1E8B43] pl-2 mb-4">
+          <h1 className="font-bold text-[#1E8B43] border-l-8 border-[#1E8B43] pl-2 mb-8">
             Produk UMKM
           </h1>
-          <Swiper
+          {/* <Swiper
             slidesPerView={6}
             spaceBetween={150}
             pagination={{
@@ -83,9 +82,10 @@ export default function Product() {
             modules={[Pagination,  Autoplay]}
             className="mySwiper"
             style={{ paddingLeft: "44px", paddingBottom: "36px" }}
-          >
-            {data?.data.records.slice(0, 10).map((item, index) => (
-              <SwiperSlide>
+          > */}
+          <div className="grid grid-cols-1 md:grid-cols-6 gap-4">
+            {data?.data.records.slice(0, 6).map((item, index) => (
+            //   <SwiperSlide>
                 <div
                   key={index}
                   className="border border-gray-200 rounded-lg shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-500  gap-3 w-[188px] h-[352px] 
@@ -134,9 +134,10 @@ export default function Product() {
                     </button>
                   </div>
                 </div>
-              </SwiperSlide>
+            //   </SwiperSlide>
             ))}
-          </Swiper>
+            </div>
+          {/* </Swiper> */}
           <div className="flex flex-col gap-5">
             <div className="flex justify-end mt-4">
               <button
