@@ -58,7 +58,7 @@ export default function CardDonate() {
     <div className="px-4 md:px-36 md:py-10 overflow-hidden bg-white ">
       <div className="grid grid-cols-1 gap-8 ">       
         <div className="md:w-full ">
-          <h1 className="font-bold text-[#1E8B43] border-l-8 border-[#1E8B43] pl-2 ">
+          <h1 className="font-bold text-xl text-[#1E8B43] border-l-8 border-[#1E8B43] pl-2 ">
             Donasi Kemanusiaan
           </h1>         
         </div>

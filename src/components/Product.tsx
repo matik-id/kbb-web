@@ -57,7 +57,7 @@ export default function Product() {
       <div className="grid grid-cols-1 gap-24 md:flex items-center justify-between">
         
         <div className="md:w-full ">
-          <h1 className="font-bold text-[#1E8B43] border-l-8 border-[#1E8B43] pl-2 mb-8">
+          <h1 className="font-bold text-xl text-[#1E8B43] border-l-8 border-[#1E8B43] pl-2 mb-8">
             Produk UMKM
           </h1>
           

@@ -54,7 +54,7 @@ export default function Destinations() {
     <div className="px-4 md:px-36 md:py-10 overflow-hidden bg-white ">
       <div className="grid grid-cols-1 gap-24 md:flex items-center justify-between">
         <div className="md:w-full">
-          <h1 className="font-bold text-[#1E8B43] border-l-8 border-[#1E8B43] pl-2 mb-10">
+          <h1 className="font-bold text-xl text-[#1E8B43] border-l-8 border-[#1E8B43] pl-2 mb-10">
             Destinasi Wisata
           </h1>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-5">

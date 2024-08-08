@@ -21,8 +21,8 @@ export default function Home() {
       <Product />
       <CardDonate />
       {/* <DonationCard /> */}
-      <Product />
-      <Banner />
+      {/* <Product /> */}
+      {/* <Banner /> */}
       <Footer />
     </main>
   );
