@@ -51,7 +51,7 @@ const Donation = () => {
         Donasi Kemanusiaan
       </h1>
 
-      <Swiper
+      {/* <Swiper
         slidesPerView={3}
         spaceBetween={10}
         pagination={{
@@ -61,9 +61,11 @@ const Donation = () => {
         className="mySwiper"
         navigation={true}
         style={{  paddingLeft: "44px", paddingBottom: "36px" }}
-      > 
-        {data?.data.records.slice(0, 5).map((item, index) => (
-        <SwiperSlide>
+      >  */}
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+        {data?.data.records.slice(0, 3).map((item, index) => (
+        // <SwiperSlide>
           <div
             key={index}
             className="w-full md:w-[350px] h-[400px] shadow-xl rounded-lg overflow-hidden cursor-pointer "
@@ -92,10 +94,22 @@ const Donation = () => {
               />
             </div>
           </div>
-          </SwiperSlide>
+          // </SwiperSlide>
         ))}
+        </div>
+        <div className="flex flex-col gap-5">
+            <div className="flex justify-end mt-4">
+              <button
+                className="bg-[#84CC16] text-white px-5 py-2 rounded-lg hover:bg-[#84CC16]/90 transition-all duration-500 
+              "
+                onClick={() => (window.location.href = "/donation/list")}
+              >
+                Selengkapnya
+              </button>
+            </div>
+          </div>
       
-      </Swiper>
+      {/* </Swiper> */}
 
       
     </div>
