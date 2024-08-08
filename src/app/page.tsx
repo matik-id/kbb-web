@@ -19,6 +19,7 @@ export default function Home() {
       <Destinations />
       <Product />
       <DonationCard />
+      <Product />
       <Banner />
       <Footer />
     </main>
