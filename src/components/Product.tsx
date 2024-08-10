@@ -69,7 +69,7 @@ export default function Product() {
                 cursor-pointer"
                   onClick={() =>
                     router.push(
-                      `/product/list`
+                      `/product/view/${decodeURI(item.title)}/${item.id}`
                     )
                   }
                 >

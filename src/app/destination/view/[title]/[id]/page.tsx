@@ -11,7 +11,7 @@ import { FaUserAlt } from "react-icons/fa";
 const page = () => {
   const [destination, setDestination] = useState<DestinationData>();
   const router = useRouter();
-  const [data, setData] = useState<ApiResponseProducts>();
+  const [data, setData] = useState<ApiResponseDestinations>();
 
 
 
@@ -40,7 +40,7 @@ const page = () => {
     const fetchData = async () => {
       try {
         const res = await axios.get(
-          `${process.env.NEXT_PUBLIC_API_URL}product?sort_by=-created_at`,
+          `${process.env.NEXT_PUBLIC_API_URL}destination?sort_by=-created_at`,
           {
             headers: {
               Authorization: `Bearer ${process.env.NEXT_PUBLIC_AUTH_TOKEN}`,
@@ -109,10 +109,10 @@ const page = () => {
     </div>
           </div>
           <div className="text-left w-1/4 ml-10 ">
-          <div>
-            <h1 className="font-bold text-[#1E8B43] border-l-8 border-[#1E8B43] pl-2 mb-4">
-              Produk UMKM Pilihan
-            </h1>
+            <div>
+              <h1 className="font-bold text-[#1E8B43] border-l-8 border-[#1E8B43] pl-2 mb-4">
+                  Wisata Yang lain
+              </h1>
             </div>
             {data?.data.records
               .sort(() => Math.random() - 0.5)
@@ -122,48 +122,39 @@ const page = () => {
                   key={index}
                   className="border border-gray-200 rounded-lg shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-500  gap-3 w-[188px] h-[352px] mb-6
                 cursor-pointer"
-                  onClick={() =>
-                    router.push(
-                      `/product/list`
-                    )
-                  }
+                  onClick={() => router.push(`/product/list`)}
                 >
-                  <div className="overflow-hidden rounded-lg object-cover h-[189px] ">
-                    <img
-                      src={item.thumbnail}
-                      alt=""
-                      className="h-[189px] w-[188px] object-cover hover:scale-105 transition-all duration-500 "
-                    />
-                  </div>
-                  <div className="p-2">
-                    <h1 className=" text-[#1E8B43] mb-2 font-bold">
-                      {item.title.length > 15 ? `${item.title.slice(0, 15)}...` : item.title }
-                    </h1>
-                    <p className=" text-sm font-bold mb-1">
-                      Rp {item.price.toLocaleString("id-ID")}
-                    </p>
-                    <p className="text-gray-500 text-sm flex items-center gap-1 mb-1">
-                      <FaUserAlt />
-                      {item.owner.slice(0, 10)}
-                      {item.owner.length > 10 ? "..." : ""}
-                    </p>
-                    
-                  </div>
-                  <div className="flex justify-between p-2 items-center">
-                    <p className="text-gray-500 text-sm flex items-center gap-1">
-                      <BsEye />
-                      {item.viewer}
-                    </p>
-                    <button
-                      className="bg-[#84CC16] text-white px-2 py-1 rounded-lg hover:bg-[#84CC16]/90 transition-all duration-500 "
-                      onClick={() =>
-                        router.push(
-                          `/product/list`
-                        )
-                      }
-                    >
-                      Lihat
-                    </button>
+                  <div
+                    key={index}
+                    className="gap-5 items-center mb-5  transition-all duration-500 cursor-pointer   
+              hover:text-[#1E8B43] hover:bg-gray-200"
+                    onClick={() =>
+                      router.push(
+                        `/post/view/${decodeURI(item.name)}/${item.id}`
+                      )
+                    }
+                  >
+                    <div className="overflow-hidden ">
+                      <img
+                        src={item.thumbnail}
+                        alt=""
+                        className="h-[157px] w-[212px] object-cover rounded-lg hover:scale-105 transition-all duration-500 grayscale-0 mb-3"
+                      />
+                    </div>
+                    <div>
+                      <p className="font-bold hover:text-[#1E8B43] text-sm mb-2">
+                        {item.name}
+                      </p>
+
+                      <p className="text-gray-500 text-sm">
+                        {new Intl.DateTimeFormat("id-ID", {
+                          weekday: "long",
+                          day: "numeric",
+                          month: "long",
+                          year: "numeric",
+                        }).format(new Date(item.created_at))}
+                      </p>
+                    </div>
                   </div>
                 </div>
               ))}

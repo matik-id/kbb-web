@@ -65,9 +65,7 @@ const page = () => {
                 <p className="font-bold hover:text-[#1E8B43] text-xl">
                   {item.title}
                 </p>
-                {/* <p className=" hidden md:block text-[#1E8B43] text-sm md:flex items-center mb-4">
-                  <BiSolidMap />{item.location}
-                </p> */}
+                
                 <p className="text-gray-500 text-sm">
                   {new Intl.DateTimeFormat("id-ID", {
                     weekday: "long",
