@@ -68,7 +68,7 @@ const Hero = () => {
                 />
               </div>
               <div className="p-2 w-full">
-                <h1 className="font-bold">{item.title.length > 34 ? `${item.title.slice(0, 20)}...` : item.title}</h1>
+                <h1 className="font-bold">{item.title.length > 25 ? `${item.title.slice(0, 20)}...` : item.title}</h1>
                 <p className="text-gray-500 text-sm">
                   {new Intl.DateTimeFormat('id-ID', {
                     weekday: 'long',
@@ -81,7 +81,7 @@ const Hero = () => {
             </div>
           </>
         ))}
-        <div className="flex justify-end mt-10">
+        <div className="flex justify-end mt-10 mb-10">
           <button className="bg-[#84CC16] text-white px-5 py-2 rounded-lg hover:bg-[#84CC16]/70 transition-all duration-500 "
           onClick={() => window.location.href = "/post/list"}>
             Selengkapnya

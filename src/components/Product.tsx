@@ -61,7 +61,7 @@ export default function Product() {
             Produk UMKM
           </h1>
           
-          <div className="grid grid-cols-1 md:grid-cols-6 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-6 gap-4 place-items-center">
             {data?.data.records.slice(0, 6).map((item, index) => (
                 <div
                   key={index}
@@ -100,7 +100,7 @@ export default function Product() {
                       {item.viewer}
                     </p>
                     <button
-                      className="bg-[#84CC16] text-white px-2 py-1 rounded-lg hover:bg-[#84CC16]/90 transition-all duration-500 "
+                      className="bg-[#84CC16] text-white px-2 py-1 rounded-lg hover:bg-[#84CC16]/90 transition-all duration-500  "
                       onClick={() =>
                         router.push(
                           `/product/list`
@@ -117,7 +117,7 @@ export default function Product() {
             <div className="flex justify-end mt-4">
               <button
                 className="bg-[#84CC16] text-white px-5 py-2 rounded-lg hover:bg-[#84CC16]/90 transition-all duration-500 
-              "
+              my-6"
                 onClick={() => (window.location.href = "/product/list")}
               >
                 Selengkapnya

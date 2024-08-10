@@ -57,7 +57,7 @@ export default function Destinations() {
           <h1 className="font-bold text-xl text-[#1E8B43] border-l-8 border-[#1E8B43] pl-2 mb-10">
             Destinasi Wisata
           </h1>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-5 place-items-center">
             {destination?.data.records.slice(0, 4).map((item, index) => (
               <>
                 <div
@@ -96,7 +96,7 @@ export default function Destinations() {
             <div className="flex justify-end mt-4">
               <button
                 className="bg-[#84CC16] text-white px-5 py-2 rounded-lg hover:bg-[#84CC16]/90 transition-all duration-500 
-              "
+              my-6"
                 onClick={() => (window.location.href = "/destination/list")}
               >
                 Selengkapnya

@@ -99,7 +99,7 @@ export default function CardDonate() {
             <div className="flex justify-end ">
               <button
                 className="bg-[#84CC16] text-white px-5 py-2 rounded-lg hover:bg-[#84CC16]/90 transition-all duration-500 
-              "
+              my-6"
                 onClick={() => (window.location.href = "/product/list")}
               >
                 Selengkapnya
