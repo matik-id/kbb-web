@@ -92,7 +92,7 @@ const page = () => {
           <div className="text-left mb-10 md:w-1/4 md:ml-10 ">
             <div>
               <h1 className="font-bold text-[#1E8B43] border-l-8 border-[#1E8B43] pl-2 mb-4">
-                Berita Yang Terkait
+                Berita Lainnya
               </h1>
             </div>
             {data?.data.records

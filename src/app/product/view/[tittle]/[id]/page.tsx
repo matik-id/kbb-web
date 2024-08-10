@@ -202,7 +202,7 @@ const page = () => {
           <div className="text-left md:w-1/4 md:ml-10 ">
             <div>
               <h1 className="font-bold text-[#1E8B43] border-l-8 border-[#1E8B43] pl-2 mb-4">
-                Produk UMKM Pilihan
+                Produk Lainnya
               </h1>
             </div>
             {data?.data.records
