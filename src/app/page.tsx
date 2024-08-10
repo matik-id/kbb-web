@@ -5,7 +5,6 @@ import DonationCard from "@/components/Donation";
 import Donation from "@/components/Donation";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
-import HeroSlide from "@/components/HeroSlide";
 import Navbar from "@/components/Navbar";
 import Product from "@/components/Product";
 import RunningText from "@/components/RunningText";
@@ -21,9 +20,7 @@ export default function Home() {
       <Destinations />
       <Product />
       <CardDonate />
-      {/* <DonationCard /> */}
-      {/* <Product /> */}
-      {/* <Banner /> */}
+      
       <Footer />
     </main>
   );
