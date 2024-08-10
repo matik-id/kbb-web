@@ -4,6 +4,7 @@ import Destinations from "@/components/Destinations";
 import DonationCard from "@/components/Donation";
 import Donation from "@/components/Donation";
 import Footer from "@/components/Footer";
+import Hero from "@/components/Hero";
 import HeroSlide from "@/components/HeroSlide";
 import Navbar from "@/components/Navbar";
 import Product from "@/components/Product";
@@ -16,7 +17,7 @@ export default function Home() {
         <Navbar />
       </nav>
       <RunningText />
-      <HeroSlide />
+      <Hero />
       <Destinations />
       <Product />
       <CardDonate />

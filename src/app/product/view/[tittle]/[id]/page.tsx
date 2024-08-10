@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import axios from "axios";
 import { Breadcrumb } from "flowbite-react";
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import React, { useEffect, useState, useRef } from "react";
 import Marquee from "react-fast-marquee";
 import {
@@ -18,26 +18,28 @@ import {
 } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 // Import Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/free-mode';
-import 'swiper/css/navigation';
-import 'swiper/css/thumbs';
+import "swiper/css";
+import "swiper/css/free-mode";
+import "swiper/css/navigation";
+import "swiper/css/thumbs";
 
-import './styles.css';
+import "./styles.css";
 
 // import required modules
-import { FreeMode, Navigation, Thumbs } from 'swiper/modules';
+import { FreeMode, Navigation, Thumbs } from "swiper/modules";
 import router from "next/router";
 import { BsEye } from "react-icons/bs";
 const page = () => {
   const [destination, setDestination] = useState<DataDetail>();
   const [data, setData] = useState<ApiResponseProducts>();
-  
+
   const [thumbsSwiper, setThumbsSwiper] = useState<any>(null);
   const { id } = useParams();
+
+  const router = useRouter();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -77,8 +79,6 @@ const page = () => {
     fetchData();
   }, []);
 
-  
-
   return (
     <div>
       <nav className="sticky top-0 z-50 bg-[#FFFFFF]">
@@ -93,53 +93,50 @@ const page = () => {
           </Breadcrumb.Item>
         </Breadcrumb>
         <div className="flex gap-10 mt-10 mb-96">
-         
-          <div className="w-[405px]">
-          <Swiper
-        loop={true}
-        spaceBetween={10}
-        thumbs={{ swiper: thumbsSwiper }}
-        modules={[FreeMode, Navigation, Thumbs]}
-        className="mySwiper2"
-      >
-        <SwiperSlide>
-          <img src={destination?.data.thumbnail} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src={destination?.data.image1} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src={destination?.data.image2} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src={destination?.data.image3}  />
-        </SwiperSlide>
-        
-      </Swiper>
-      <Swiper
-        onSwiper={setThumbsSwiper}
-        loop={true}
-        spaceBetween={10}
-        slidesPerView={4}
-        freeMode={true}
-        watchSlidesProgress={true}
-        modules={[FreeMode, Navigation, Thumbs]}
-        className="mySwiper"
-      >
-        <SwiperSlide>
-          <img src={destination?.data.thumbnail} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src={destination?.data.image1} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src={destination?.data.image2} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src={destination?.data.image3} />
-        </SwiperSlide>
-        
-      </Swiper>
+          <div className="w-[451px] h-[448px]">
+            <Swiper
+              loop={true}
+              spaceBetween={10}
+              thumbs={{ swiper: thumbsSwiper }}
+              modules={[FreeMode, Navigation, Thumbs]}
+              className="mySwiper2"
+            >
+              <SwiperSlide>
+                <img src={destination?.data.thumbnail} className="object-cover" />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img src={destination?.data.image1} className="object-cover" />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img src={destination?.data.image2} className="object-cover" />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img src={destination?.data.image3} className="object-cover" />
+              </SwiperSlide>
+            </Swiper>
+            <Swiper
+              onSwiper={setThumbsSwiper}
+              loop={true}
+              spaceBetween={10}
+              slidesPerView={4}
+              freeMode={true}
+              watchSlidesProgress={true}
+              modules={[FreeMode, Navigation, Thumbs]}
+              className="mySwiper"
+            >
+              <SwiperSlide>
+                <img src={destination?.data.thumbnail} className="object-cover" />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img src={destination?.data.image1} className="object-cover" />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img src={destination?.data.image2} className="object-cover" />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img src={destination?.data.image3} className="object-cover"/>
+              </SwiperSlide>
+            </Swiper>
           </div>
           <div className="h-full flex flex-col gap-6">
             <div>
@@ -194,8 +191,6 @@ const page = () => {
                   </p>
                 </div>
               </div>
-
-              
             </div>
             <div>
               <h1 className="font-bold text-xl text-[#000000] mt-5">
@@ -260,9 +255,7 @@ const page = () => {
         </div>
       </div>
 
-              
       <div>
-        
         <Footer />
       </div>
     </div>
