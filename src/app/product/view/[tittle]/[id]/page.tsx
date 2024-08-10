@@ -80,7 +80,7 @@ const page = () => {
   }, []);
 
   return (
-    <div>
+    <div className="overflow-hidden">
       <nav className="sticky top-0 z-50 bg-[#FFFFFF]">
         <Navbar />
       </nav>
@@ -92,8 +92,8 @@ const page = () => {
             {destination?.data.title}
           </Breadcrumb.Item>
         </Breadcrumb>
-        <div className="flex gap-10 mt-10 mb-96">
-          <div className="w-[451px] h-[448px]">
+        <div className="md:flex gap-10 mt-10 mb-96">
+          <div className="md:w-[451px] md:h-[448px]">
             <Swiper
               loop={true}
               spaceBetween={10}
@@ -140,10 +140,10 @@ const page = () => {
           </div>
           <div className="h-full flex flex-col gap-6">
             <div>
-              <h1 className="font-bold text-4xl text-[#000000]">
+              <h1 className="font-bold text-2xl md:text-4xl text-[#000000]">
                 {destination?.data.title}
               </h1>
-              <p className="font-bold text-3xl text-[#1E8B43] mt-2 mb-2">
+              <p className="font-bold text-xl md:text-3xl text-[#1E8B43] mt-2 mb-2">
                 Rp. {destination?.data.price}
               </p>
               {destination?.data.price_promo && (
@@ -157,7 +157,7 @@ const page = () => {
                 </p>
               )}
             </div>
-            <div className="flex flex-col gap-4 w-[500px] bg-[#F9F9F9] p-4 rounded-md">
+            <div className="flex flex-col gap-4 md:w-[500px] bg-[#F9F9F9] p-4 rounded-md">
               <div className="flex items-center gap-2">
                 <div>
                   <FaUser className="text-[#1E8B43] w-6 h-6" />
@@ -192,14 +192,14 @@ const page = () => {
                 </div>
               </div>
             </div>
-            <div>
-              <h1 className="font-bold text-xl text-[#000000] mt-5">
+            <div className="mb-10">
+              <h1 className="font-bold text-xl text-[#000000] mt-5 ">
                 Deskripsi
               </h1>
               <p>{destination?.data.content}</p>
             </div>
           </div>
-          <div className="text-left w-1/4 ml-10 ">
+          <div className="text-left md:w-1/4 md:ml-10 ">
             <div>
               <h1 className="font-bold text-[#1E8B43] border-l-8 border-[#1E8B43] pl-2 mb-4">
                 Produk UMKM Pilihan

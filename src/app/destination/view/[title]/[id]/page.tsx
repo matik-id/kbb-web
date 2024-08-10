@@ -68,8 +68,8 @@ const page = () => {
             {destination?.data.name}
           </Breadcrumb.Item>
         </Breadcrumb>
-        <div className="flex gap-5 mt-10 mb-96">
-          <div className="text-center flex flex-col items-center w-3/4 ">
+        <div className="flex flex-col md:flex-row gap-5 mt-10 mb-96">
+          <div className="text-center flex flex-col items-center md:w-3/4 ">
             <h1 className="font-bold md:text-4xl mt-5 text-[#000000] mb-2 ">
               {destination?.data.name}
             </h1>
@@ -85,7 +85,7 @@ const page = () => {
             <img
               src={destination?.data.thumbnail}
               alt=""
-              className="h-[400px] w-full object-cover rounded-lg  mb-3"
+              className=" h-[200px] md:h-[400px] w-full object-cover rounded-lg  mb-3"
             />
             <div className="text-justify mt-10">
               <p className="text-justify">{destination?.data.content}</p>
@@ -108,7 +108,7 @@ const page = () => {
         
     </div>
           </div>
-          <div className="text-left w-1/4 ml-10 ">
+          <div className="text-left md:w-1/4 md:ml-10 ">
             <div>
               <h1 className="font-bold text-[#1E8B43] border-l-8 border-[#1E8B43] pl-2 mb-4">
                   Wisata Yang lain
@@ -120,7 +120,7 @@ const page = () => {
               .map((item, index) => (
                 <div
                   key={index}
-                  className="border border-gray-200 rounded-lg shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-500  gap-3 w-[188px] h-[352px] mb-6
+                  className=" hover:shadow-2xl hover:scale-105 transition-all duration-500  gap-3 w-[188px]  mb-6
                 cursor-pointer"
                   onClick={() => router.push(`/product/list`)}
                 >

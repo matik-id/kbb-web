@@ -77,7 +77,7 @@ const page = () => {
           </Breadcrumb.Item>
         </Breadcrumb>
         <div className="md:flex gap-5 mt-10 mb-96">
-          <div className="text-center flex flex-col items-center w-3/4 ">
+          <div className="text-center flex flex-col items-center md:w-3/4 ">
             <h1 className="font-bold md:text-4xl mt-5 text-[#000000] mb-2 ">
               {destination?.data.title}
             </h1>
@@ -94,12 +94,12 @@ const page = () => {
             <img
               src={destination?.data.image}
               alt=""
-              className="h-[400px] w-full object-cover rounded-lg  mb-3"
+              className="md:h-[400px] w-full object-cover rounded-lg  mb-3"
             />
             <div className="text-justify mt-10">
               <p className="text-justify">{destination?.data.content}</p>
             </div>
-            <div className="mt-10 text-left w-[400px] flex flex-col gap-2 bg-gray-200 p-5 rounded">
+            <div className="mt-10 text-left md:w-[400px] flex flex-col gap-2 bg-gray-200 p-5 rounded mb-10 ">
             {destination?.data &&(
               <>
              <h1 className="font-bold text-[#1E8B43] border-l-8 border-[#1E8B43] pl-2 mb-4">
@@ -123,7 +123,7 @@ const page = () => {
               )}
             </div>
           </div>
-          <div className="text-left w-1/4 ml-10 ">
+          <div className="text-left md:w-1/4 md:ml-10 ">
             <div>
               <h1 className="font-bold text-[#1E8B43] border-l-8 border-[#1E8B43] pl-2 mb-4">
                 Donasi Lainnya

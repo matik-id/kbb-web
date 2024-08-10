@@ -49,7 +49,7 @@ const page = () => {
         <div className="mt-3 min-h-0">
           {destination?.data.records.map((item, index) => (
             <>
-              <div key={index} className="flex gap-5 items-center mb-5  transition-all duration-500 cursor-pointer border-b  hover:text-[#1E8B43] hover:bg-gray-200"
+              <div key={index} className="flex flex-col md:flex-row gap-5 items-center mb-5  transition-all duration-500 cursor-pointer border-b  hover:text-[#1E8B43] hover:bg-gray-200"
               
               onClick={() => router.push(`/destination/view/${decodeURI(item.name)}/${item.id}`)}>
               
@@ -57,17 +57,17 @@ const page = () => {
                   <img
                     src={item.thumbnail}
                     alt=""
-                    className="h-[157px] w-[212px] object-cover rounded-lg hover:scale-105 transition-all duration-500 grayscale-0 mb-3"
+                    className="h-[157px] w-[212px] object-cover rounded-lg hover:scale-105 transition-all duration-500 grayscale-0 "
                   />
                 </div>
                 <div>
-                <p className="font-bold hover:text-[#1E8B43] text-xl">
+                <p className="font-bold hover:text-[#1E8B43] text-lg md:text-xl">
                   {item.name}
                 </p>
                 <p className=" hidden  text-[#1E8B43] text-sm md:flex items-center mb-4">
                   <BiSolidMap />{item.address}
                 </p>
-                <p className="text-gray-500 text-sm">
+                <p className="text-gray-500 text-sm mb-4">
                   {new Intl.DateTimeFormat("id-ID", {
                     weekday: "long",
                     day: "numeric",

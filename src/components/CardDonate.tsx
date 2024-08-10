@@ -100,7 +100,7 @@ export default function CardDonate() {
               <button
                 className="bg-[#84CC16] text-white px-5 py-2 rounded-lg hover:bg-[#84CC16]/90 transition-all duration-500 
               my-6"
-                onClick={() => (window.location.href = "/product/list")}
+                onClick={() => (window.location.href = "/donation/list")}
               >
                 Selengkapnya
               </button>
