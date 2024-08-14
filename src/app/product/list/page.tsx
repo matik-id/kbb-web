@@ -49,7 +49,7 @@ const page = () => {
           <h1 className="font-bold text-3xl mt-5 text-[#000000] border-l-8 border-[#1E8B43] pl-2 mb-10 ">Produk UMKM </h1>
         </div>
 
-        <div className="mt-3 min-h-0">
+        <div className="mt-3 min-h-0 mb-48">
         <div className="grid grid-cols-1 md:grid-cols-5 gap-2 md:gap-10">
             {data?.data.records.map((item, index) => (
               <div

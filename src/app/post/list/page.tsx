@@ -46,7 +46,7 @@ const page = () => {
           <h1 className="font-bold text-3xl mt-5 text-[#000000] border-l-8 border-[#1E8B43] pl-2 mb-10 ">Berita </h1>
         </div>
 
-        <div className="mt-3 min-h-0">
+        <div className="mt-3 min-h-0 mb-48">
           {post?.data.records.map((item, index) => (
             <>
               <div key={index} className="flex flex-col md:flex-row gap-5 items-center mb-5  transition-all duration-500 cursor-pointer border-b  
