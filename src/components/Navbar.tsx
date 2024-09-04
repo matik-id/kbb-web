@@ -30,6 +30,14 @@ const Navbar = () => {
           </li>
           <li>
             <a
+              href="/activity/list"
+              className="hover:text-[#84CC16] hover:underline underline-offset-4 transition-all duration-500"
+            >
+              Kegiatan
+            </a>
+          </li>
+          <li>
+            <a
               href="/destination/list"
               className="hover:text-[#84CC16] hover:underline underline-offset-4 transition-all duration-500"
             >
@@ -86,6 +94,15 @@ const Navbar = () => {
                   onClick={() => setOpen(false)}
                 >
                   Berita
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/post/list"
+                  className="hover:text-[#84CC16] hover:underline underline-offset-4 transition-all duration-500"
+                  onClick={() => setOpen(false)}
+                >
+                  Kegiatan
                 </a>
               </li>
               <li>

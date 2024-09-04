@@ -14,7 +14,7 @@ const Hero = () => {
     const fetchData = async () => {
       try {
         const res = await axios.get(
-          `${process.env.NEXT_PUBLIC_API_URL}post?sort_by=-created_at&type=activity`,
+          `${process.env.NEXT_PUBLIC_API_URL}post?sort_by=-created_at&type=article`,
           {
             headers: {
               Authorization: `Bearer ${process.env.NEXT_PUBLIC_AUTH_TOKEN}`,

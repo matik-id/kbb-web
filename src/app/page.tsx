@@ -1,3 +1,4 @@
+import Activity from "@/components/Activity";
 import Banner from "@/components/Banner";
 import CardDonate from "@/components/CardDonate";
 import Destinations from "@/components/Destinations";
@@ -17,10 +18,10 @@ export default function Home() {
       </nav>
       <RunningText />
       <Hero />
+      <Activity />
       <Destinations />
       <Product />
       <CardDonate />
-      
       <Footer />
     </main>
   );

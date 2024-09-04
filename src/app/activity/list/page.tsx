@@ -15,7 +15,7 @@ const page = () => {
     const fetchData = async () => {
       try {
         const res = await axios.get(
-          `${process.env.NEXT_PUBLIC_API_URL}post?sort_by=-created_at&type=article`,
+          `${process.env.NEXT_PUBLIC_API_URL}post?sort_by=-created_at&type=activity`,
           {
             headers: {
               Authorization: `Bearer ${process.env.NEXT_PUBLIC_AUTH_TOKEN}`,
@@ -40,10 +40,10 @@ const page = () => {
       <div className=" px-4 md:px-36 flex flex-col ">
         <Breadcrumb className="mt-5  font-bold text-[#1E8B43]">
           <Breadcrumb.Item href="/" >Home</Breadcrumb.Item>
-          <Breadcrumb.Item href="/post/list">Berita</Breadcrumb.Item>
+          <Breadcrumb.Item href="/post/list">Kegiatan</Breadcrumb.Item>
         </Breadcrumb>
         <div>
-          <h1 className="font-bold text-3xl mt-5 text-[#000000] border-l-8 border-[#1E8B43] pl-2 mb-10 ">Berita </h1>
+          <h1 className="font-bold text-3xl mt-5 text-[#000000] border-l-8 border-[#1E8B43] pl-2 mb-10 ">Kegiatan Terbaru </h1>
         </div>
 
         <div className="mt-3 min-h-0 mb-48">

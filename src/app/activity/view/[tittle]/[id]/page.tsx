@@ -38,7 +38,7 @@ const page = () => {
     const fetchData = async () => {
       try {
         const res = await axios.get(
-          `${process.env.NEXT_PUBLIC_API_URL}post?sort_by=-created_at&type=article`,
+          `${process.env.NEXT_PUBLIC_API_URL}post?sort_by=-created_at&type=activity`,
           {
             headers: {
               Authorization: `Bearer ${process.env.NEXT_PUBLIC_AUTH_TOKEN}`,
@@ -61,7 +61,7 @@ const page = () => {
       <div className=" px-4 md:px-36 bg-white flex flex-col">
         <Breadcrumb className="mt-5 font-bold text-[#1E8B43]">
           <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
-          <Breadcrumb.Item href="/post/list">Berita</Breadcrumb.Item>
+          <Breadcrumb.Item href="/post/list">Kegiatan</Breadcrumb.Item>
           <Breadcrumb.Item href="/post/list" className="hidden">
             {destination?.data.title}
           </Breadcrumb.Item>
@@ -92,7 +92,7 @@ const page = () => {
           <div className="text-left mb-10 md:w-1/4 md:ml-10 ">
             <div>
               <h1 className="font-bold text-[#1E8B43] border-l-8 border-[#1E8B43] pl-2 mb-4">
-                Berita Lainnya
+                Kegiatan Lainnya
               </h1>
             </div>
             {data?.data.records
