@@ -2,4 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+.content-wrapper * {
+    font-size: 1rem !important;   
+}
+.content-wrapper a {
+    color: #0000FF !important; 
+    text-decoration: underline;
+  }
 

@@ -56,7 +56,6 @@ const page = () => {
             <p className=" p-1 flex items-center bg-[#1E8B43] text-white font-bold rounded-b-lg"><BiSolidMap/> {item.location}</p>
             <div className="pt-2 px-4">
             <p className="font-bold hover:text-[#1E8B43]">{item.title}</p>
-            <p className="text-sm text-gray-500 mb-2">{item.content}</p>
             <p className="mb-2">Dana terkumpul : Rp {item.balance_collected.toLocaleString('id-ID')}</p>
             <Progress progress={(item.balance_collected / item.target_balance) * 100} color="green" />
             </div>

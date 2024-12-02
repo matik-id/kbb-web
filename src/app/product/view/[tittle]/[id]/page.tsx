@@ -196,7 +196,12 @@ const page = () => {
               <h1 className="font-bold text-xl text-[#000000] mt-5 ">
                 Deskripsi
               </h1>
-              <p>{destination?.data.content}</p>
+              <div
+                className="text-justify content-wrapper"
+                dangerouslySetInnerHTML={{
+                  __html: destination?.data.content || ""
+                }}
+              />
             </div>
           </div>
           <div className="text-left md:w-1/4 md:ml-10 ">

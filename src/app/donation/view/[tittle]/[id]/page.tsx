@@ -97,7 +97,12 @@ const page = () => {
               className="md:h-[400px] w-full object-cover rounded-lg  mb-3"
             />
             <div className="text-justify mt-10">
-              <p className="text-justify">{destination?.data.content}</p>
+            <div
+                className="text-justify content-wrapper"
+                dangerouslySetInnerHTML={{
+                  __html: destination?.data.content || ""
+                }}
+              />
             </div>
             <div className="mt-10 text-left md:w-[400px] flex flex-col gap-2 bg-gray-200 p-5 rounded mb-10 ">
             {destination?.data &&(

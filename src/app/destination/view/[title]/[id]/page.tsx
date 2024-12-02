@@ -88,7 +88,12 @@ const page = () => {
               className=" h-[200px] md:h-[400px] w-full object-cover rounded-lg  mb-3"
             />
             <div className="text-justify mt-10">
-              <p className="text-justify">{destination?.data.content}</p>
+            <div
+                className="text-justify content-wrapper"
+                dangerouslySetInnerHTML={{
+                  __html: destination?.data.content || ""
+                }}
+              />
             </div>
 
         <div className='mt-24 h-[300px] overflow-hidden '>

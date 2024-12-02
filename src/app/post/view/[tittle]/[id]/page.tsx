@@ -8,6 +8,7 @@ import React, { useEffect, useState } from "react";
 import Marquee from "react-fast-marquee";
 import { BsEye } from "react-icons/bs";
 import { FaUserAlt } from "react-icons/fa";
+
 const page = () => {
   const [destination, setDestination] = useState<PostDetail>();
   const [data, setData] = useState<ApiResponsePosts>();
@@ -86,7 +87,23 @@ const page = () => {
               className="h-[200px] md:h-[400px] w-full object-cover rounded-lg  mb-3 shadow-lg"
             />
             <div className="text-justify mt-10">
-              <p className="text-justify">{destination?.data.content}</p>
+              <style>
+                {`
+                  .content-wrapper a {
+                    color: #0000FF !important;  /* Blue color for links */
+                    text-decoration: underline;
+                  }
+                  .content-wrapper a:hover {
+                    color: #0066CC !important;  /* Slightly darker blue on hover */
+                  }
+                `}
+              </style>
+              <div
+                className="text-justify content-wrapper"
+                dangerouslySetInnerHTML={{
+                  __html: destination?.data.content || ""
+                }}
+              />
             </div>
           </div>
           <div className="text-left mb-10 md:w-1/4 md:ml-10 ">

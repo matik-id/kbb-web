@@ -59,7 +59,6 @@ const DonationCard = () => {
             </p>
             <div className="pt-2 px-4">
               <p className="font-bold hover:text-[#1E8B43]">{item.title}</p>
-              <p className="text-sm text-gray-500 mb-2">{item.content.length > 29 ? item.content.slice(0, 29) + "..." : item.content}</p>
               <p className="mb-2">
                 Dana terkumpul : Rp{" "}
                 {item.balance_collected.toLocaleString("id-ID")}
